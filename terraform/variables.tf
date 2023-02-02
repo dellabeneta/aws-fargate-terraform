@@ -1,0 +1,3 @@
+variable "projeto" {
+  default = "doguinho"
+}
