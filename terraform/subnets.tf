@@ -8,13 +8,13 @@ resource "aws_subnet" "subnet_public_a" {
   }
 }
 
-resource "aws_subnet" "subnet_public_b" {
+resource "aws_subnet" "subnet_public_c" {
   vpc_id            = aws_vpc.vpc.id
   cidr_block        = "10.0.2.0/24"
   availability_zone = "us-west-1c"
 
   tags = {
-    "Name" = "${var.projeto}-public-b"
+    "Name" = "${var.projeto}-public-c"
   }
 }
 
@@ -28,12 +28,12 @@ resource "aws_subnet" "subnet_private_a" {
   }
 }
 
-resource "aws_subnet" "subnet_private_b" {
+resource "aws_subnet" "subnet_private_c" {
   vpc_id            = aws_vpc.vpc.id
   cidr_block        = "10.0.4.0/24"
   availability_zone = "us-west-1c"
 
   tags = {
-    "Name" = "${var.projeto}-private-b"
+    "Name" = "${var.projeto}-private-c"
   }
 }

@@ -7,6 +7,6 @@ terraform {
 }
 
 provider "aws" {
-  region  = "us-west-1"
+  region  = "us-west-1" #Califórnia
   profile = "doguinho"
 }
