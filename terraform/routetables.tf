@@ -1,4 +1,4 @@
-resource "aws_route_table" "route_table_public_subnet" {
+resource "aws_route_table" "route_table_public_subnets" {
   vpc_id = aws_vpc.vpc.id
 
   route {
@@ -11,40 +11,12 @@ resource "aws_route_table" "route_table_public_subnet" {
   }  
 }
 
-resource "aws_route_table_association" "association_public_a" {
+resource "aws_route_table_association" "table_association_public_a" {
   subnet_id      = aws_subnet.subnet_public_a.id
-  route_table_id = aws_route_table.route_table_public_subnet.id
+  route_table_id = aws_route_table.route_table_public_subnets.id
 }
 
-resource "aws_route_table_association" "association_public_c" {
+resource "aws_route_table_association" "table_association_public_c" {
   subnet_id      = aws_subnet.subnet_public_c.id
-  route_table_id = aws_route_table.route_table_public_subnet.id
-}
-
-
-
-resource "aws_route_table" "route_table_private_subnet_a" {
-  vpc_id = aws_vpc.vpc.id
-
-    tags = {
-    "Name" = "${var.projeto}-rt-private-subnet-a"
-  }  
-}
-
-resource "aws_route_table_association" "association_private_a" {
-  subnet_id      = aws_subnet.subnet_private_a.id
-  route_table_id = aws_route_table.route_table_private_subnet_a.id
-}
-
-resource "aws_route_table" "route_table_private_subnet_c" {
-  vpc_id = aws_vpc.vpc.id
-
-    tags = {
-    "Name" = "${var.projeto}-rt-private-subnet-c"
-  }  
-}
-
-resource "aws_route_table_association" "association_private_c" {
-  subnet_id      = aws_subnet.subnet_private_c.id
-  route_table_id = aws_route_table.route_table_private_subnet_c.id
+  route_table_id = aws_route_table.route_table_public_subnets.id
 }

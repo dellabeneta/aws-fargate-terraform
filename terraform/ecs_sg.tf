@@ -18,6 +18,6 @@ resource "aws_security_group" "security_group_cluster" {
   }
 
   tags = {
-    "Name" = "${var.projeto}-sg-lb"
+    "Name" = "${var.projeto}-sg-cluster"
   }
 }
